@@ -47,6 +47,10 @@ function whack(e, hole = null) {
   const targetHole = hole || e.currentTarget;
   if (!targetHole.classList.contains('up')) return;
 
+  // Play pop sound when a mole is whacked
+  const popSound = new Audio('sounds/pop.mp3');
+  popSound.play();
+
   score++;
   targetHole.classList.remove('up');
   scoreDisplay.textContent = score;
